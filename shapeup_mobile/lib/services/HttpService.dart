@@ -4,13 +4,15 @@ import 'dart:io';
 
 class HttpService {
   static String token = "";
+  static String role = "";
   String route = "";
 
   HttpService({this.route = ""});
 
-  void setToken(String _token) 
+  void setVars(String _token, String _role) 
   {
     token = _token;
+    role = _role;
   }
 
   static Future<List<dynamic>?> Get(String route, dynamic object, {List<String>? includeList = null}) async
@@ -29,7 +31,7 @@ class HttpService {
       });
     }
 
-    String baseUrl = "http://127.0.0.1:8081/api/" + route;
+    String baseUrl = "http://10.0.2.2:8081/api/" + route;
 
     if(object != null || includeList != null){
       baseUrl += "?" + queryString;

@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
                   height: 150,
                   child: Text(
                     'Fitness First',
-                    style: TextStyle(fontSize: 55, color: Colors.black),
+                    style: TextStyle(fontSize: 55, color: Colors.black, fontFamily: 'Arial'),
                   ),
                 ),
                 TextField(
@@ -128,6 +128,7 @@ class _LoginState extends State<Login> {
     
     if(response['token'] != null){
       HttpService.token = response['token'];
+      HttpService.role = response['role'];
     }
   }
 
