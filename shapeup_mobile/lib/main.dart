@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shapeup_mobile/pages/Login.dart';
 import 'package:shapeup_mobile/pages/Dashboard.dart';
+import 'package:shapeup_mobile/pages/Trainings.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/dashboard': (context) => Dashboard(),
           '/login': (context) => Login(),
+          '/workouts': (context) => Trainings(),
         },
       );
   }

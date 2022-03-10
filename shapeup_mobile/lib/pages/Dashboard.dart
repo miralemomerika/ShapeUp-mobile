@@ -28,37 +28,37 @@ class _DashboardState extends State<Dashboard> {
         child: ListView(
           children: [
             ListTile(
-              title: Text('Dashboard'),
+              title: Text('Pocetna'),
               onTap: () {
                 Navigator.of(context).pushNamed('/dashboard');
               }
             ),
             ListTile(
-              title: Text('Workouts'),
+              title: Text('Treninzi'),
               onTap: () {
                 Navigator.of(context).pushNamed('/workouts');
               }
             ),
             ListTile(
-              title: Text('Meals'),
+              title: Text('Obroci'),
               onTap: () {
                 Navigator.of(context).pushNamed('/meals');
               }
             ),
             ListTile(
-              title: Text('Progress'),
+              title: Text('Napredak'),
               onTap: () {
                 Navigator.of(context).pushNamed('/progress');
               }
             ),
             ListTile(
-              title: Text('Profile'),
+              title: Text('Profil'),
               onTap: () {
                 Navigator.of(context).pushNamed('/profile');
               }
             ),
             ListTile(
-              title: Text('Logout', style: TextStyle(color: Colors.red, fontSize: 18),),
+              title: Text('Odjavi se', style: TextStyle(color: Colors.red, fontSize: 18),),
               onTap: () {
                 HttpService.Logout();
                 Navigator.of(context).pushNamed('/login');
