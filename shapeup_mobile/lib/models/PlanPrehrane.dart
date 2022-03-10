@@ -1,13 +1,10 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
-
 class PlanPrehrane {
   String opis;
   String nutritivneVrijednosti;
-  Image? slika;
+  Uint8List? slika;
 
   PlanPrehrane({
     required this.opis,
@@ -16,7 +13,11 @@ class PlanPrehrane {
   });
 
   factory PlanPrehrane.fromJson(Map<String, dynamic> json){
-    return PlanPrehrane(opis: json['opis'], nutritivneVrijednosti: json['nutritivneVrijednosti'], slika: Image.memory(Uint8List.fromList(utf8.encode(json['slika']))));
+    String stringByte = json["slika"] as String;
+    List<int> bytes = base64Decode(stringByte);
+    Uint8List list = Uint8List.fromList(bytes);
+    return PlanPrehrane(opis: json['opis'], nutritivneVrijednosti: json['nutritivneVrijednosti'],
+     slika: list);
   }
 
   Map<String, dynamic> toJson() => {'opis': opis, 'nutritivneVrijednosti': nutritivneVrijednosti, 'slika': slika};

@@ -110,13 +110,12 @@ class _DashboardState extends State<Dashboard> {
             ),
           Card (
             child: TextButton(
-              onPressed: () {
+               onPressed: () {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TreningDetalji()
-                  )
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            TreningDetalji(trening: plan.trening))).then((_) => { setState(() { })});
               },
               child: Padding(
                 padding: EdgeInsets.all(20),
@@ -126,17 +125,16 @@ class _DashboardState extends State<Dashboard> {
             ),
             Container(
               alignment: Alignment.topLeft,
-              child: Text('Danasnji obrok:', style: TextStyle(color: Colors.black, fontSize: 20),), margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
+              child: Text('Danasnji obroci:', style: TextStyle(color: Colors.black, fontSize: 20),), margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
             ),
             Card (
             child: TextButton(
               onPressed: () {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => PlanPrehranDetalji()
-                  )
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            PlanPrehranDetalji(planPrehrane: plan.planPrehrane))).then((_) => { setState(() { })});
               },
               child: Padding(
                 padding: EdgeInsets.all(20),

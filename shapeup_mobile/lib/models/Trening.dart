@@ -1,4 +1,7 @@
-import 'package:flutter/services.dart';
+import 'dart:convert';
+import 'dart:typed_data';
+
+import 'package:flutter/cupertino.dart';
 
 class Trening {
   final int id;
@@ -6,7 +9,7 @@ class Trening {
   String? videoUrl;
   int ciljId;
   int kategorijaTreningaId;
-  ByteData? slika;
+  Uint8List? slika;
 
   Trening({
     required this.id,
@@ -18,7 +21,11 @@ class Trening {
   });
 
   factory Trening.fromJson(Map<String, dynamic> json){
-    return Trening(id: int.parse(json["id"].toString()), opis: json["opis"], ciljId: json["ciljId"], kategorijaTreningaId: json["kategorijaTreningaId"]);
+    String stringByte = json["slika"] as String;
+    List<int> bytes = base64Decode(stringByte);
+    Uint8List list = Uint8List.fromList(bytes);
+    return Trening(id: int.parse(json["id"].toString()), opis: json["opis"], ciljId: json["ciljId"],
+     kategorijaTreningaId: json["kategorijaTreningaId"], videoUrl: json["videoUrl"], slika: list);
   }
 
   Map<String, dynamic> toJson() => {"id": id, "opis": opis, "ciljId": ciljId, "kategorijaTreningaId": kategorijaTreningaId};
