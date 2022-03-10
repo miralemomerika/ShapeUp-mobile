@@ -59,6 +59,12 @@ class _DashboardState extends State<Dashboard> {
               }
             ),
             ListTile(
+              title: Text('Suplementi'),
+              onTap: () {
+                Navigator.of(context).pushNamed('/products');
+              }
+            ),
+            ListTile(
               title: Text('Odjavi se', style: TextStyle(color: Colors.red, fontSize: 18),),
               onTap: () {
                 HttpService.Logout();

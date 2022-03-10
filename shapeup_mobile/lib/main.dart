@@ -4,6 +4,7 @@ import 'package:shapeup_mobile/pages/Dashboard.dart';
 import 'package:shapeup_mobile/pages/NapredakPrikaz.dart';
 import 'package:shapeup_mobile/pages/PlanPrehranePrikaz.dart';
 import 'package:shapeup_mobile/pages/Profil.dart';
+import 'package:shapeup_mobile/pages/ProizvodiPrikaz.dart';
 import 'package:shapeup_mobile/pages/Trainings.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           '/meals': (context) => PlanPrehranePrikaz(),
           '/progress': (context) => NapredakPrikaz(),
           '/profile': (context) => Profil(),
+          '/products': (context) => ProizvodiPrikaz(),
         },
       );
   }
