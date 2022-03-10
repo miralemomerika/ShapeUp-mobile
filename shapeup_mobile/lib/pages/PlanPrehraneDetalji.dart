@@ -20,6 +20,7 @@ class _PlanPrehranDetaljiState extends State<PlanPrehranDetalji> {
   @override
   Widget build (BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text('Detalji plana prehrane'),
       ),

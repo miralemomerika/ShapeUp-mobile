@@ -24,6 +24,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build (BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       drawer: Drawer(
         child: ListView(
           children: [
@@ -109,6 +110,7 @@ class _DashboardState extends State<Dashboard> {
               child: Text('Danasnji trening:', style: TextStyle(color: Colors.black, fontSize: 20,),), margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
             ),
           Card (
+            elevation: 5,
             child: TextButton(
                onPressed: () {
                 Navigator.push(
@@ -128,6 +130,7 @@ class _DashboardState extends State<Dashboard> {
               child: Text('Danasnji obroci:', style: TextStyle(color: Colors.black, fontSize: 20),), margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
             ),
             Card (
+              elevation: 5,
             child: TextButton(
               onPressed: () {
                 Navigator.push(

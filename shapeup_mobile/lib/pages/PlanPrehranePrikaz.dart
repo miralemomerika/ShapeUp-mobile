@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:shapeup_mobile/models/Trening.dart';
-import 'package:shapeup_mobile/pages/TreningDetalji.dart';
+import 'package:shapeup_mobile/models/PlanPrehrane.dart';
+import 'package:shapeup_mobile/pages/PlanPrehraneDetalji.dart';
 import 'package:shapeup_mobile/services/HttpService.dart';
 
-class Trainings extends StatefulWidget {
-  const Trainings({Key? key}) : super(key: key);
+class PlanPrehranePrikaz extends StatefulWidget {
+  const PlanPrehranePrikaz({Key? key}) : super(key: key);
 
   @override
-  _TrainingsState createState() => _TrainingsState();
+  _PlanPrehranePrikaz createState() => _PlanPrehranePrikaz();
 }
 
-class _TrainingsState extends State<Trainings> {
+class _PlanPrehranePrikaz extends State<PlanPrehranePrikaz> {
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('Treninzi'),
+        title: Text('Obroci'),
       ),
       body: Column(
         children: [
@@ -25,7 +25,7 @@ class _TrainingsState extends State<Trainings> {
             alignment: Alignment.topLeft,
             child: Padding(
                 padding: EdgeInsets.all(20),
-                child: Text('Vasi Treninzi', style: TextStyle(color: Colors.blueGrey[900], fontSize: 25, fontFamily: 'Arial'),
+                child: Text('Vasi Obroci', style: TextStyle(color: Colors.blueGrey[900], fontSize: 25, fontFamily: 'Arial'),
               )
             ),
           ),
@@ -38,9 +38,9 @@ class _TrainingsState extends State<Trainings> {
   }
 
   Widget treninzi () {
-    return FutureBuilder<List<Trening>>(
-      future: GetTreninge(),
-      builder: (BuildContext context, AsyncSnapshot<List<Trening>> snapshot) {
+    return FutureBuilder<List<PlanPrehrane>>(
+      future: GetPrehranu(),
+      builder: (BuildContext context, AsyncSnapshot<List<PlanPrehrane>> snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator(),);
         }
@@ -52,7 +52,7 @@ class _TrainingsState extends State<Trainings> {
             return Container(
               height: 200,
               child: ListView(
-                children: snapshot.data!.map((e) => treningCard(e)).toList()
+                children: snapshot.data!.map((e) => obrokCard(e)).toList()
               ),
             );
           }
@@ -61,7 +61,7 @@ class _TrainingsState extends State<Trainings> {
     );
   }
 
-  Widget treningCard (trening) {
+  Widget obrokCard (obrok) {
     return Card(
       elevation: 5,
       margin: EdgeInsets.all(10),
@@ -71,18 +71,18 @@ class _TrainingsState extends State<Trainings> {
               context,
               MaterialPageRoute(
                   builder: (context) =>
-                      TreningDetalji(trening: trening))).then((_) => { setState(() { })});
+                      PlanPrehranDetalji(planPrehrane: obrok))).then((_) => { setState(() { })});
         },
         child: Padding(padding: EdgeInsets.all(20),
-          child: Text(trening.opis),
+          child: Text(obrok.opis),
         ),
       ),
     );
   }
-
-  Future<List<Trening>> GetTreninge () async {
+   
+  Future<List<PlanPrehrane>> GetPrehranu () async {
     var plans = await HttpService.Get('Plan', null);
 
-    return plans!.map((e) => Trening.fromJson(e['trening'])).toList();
+    return plans!.map((e) => PlanPrehrane.fromJson(e['planPrehrane'])).toList();
   }
 }

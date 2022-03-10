@@ -16,8 +16,7 @@ class PlanPrehrane {
     String stringByte = json["slika"] as String;
     List<int> bytes = base64Decode(stringByte);
     Uint8List list = Uint8List.fromList(bytes);
-    return PlanPrehrane(opis: json['opis'], nutritivneVrijednosti: json['nutritivneVrijednosti'],
-     slika: list);
+    return PlanPrehrane(opis: json['opis'], nutritivneVrijednosti: json['nutritivneVrijednosti'], slika: list);
   }
 
   Map<String, dynamic> toJson() => {'opis': opis, 'nutritivneVrijednosti': nutritivneVrijednosti, 'slika': slika};
