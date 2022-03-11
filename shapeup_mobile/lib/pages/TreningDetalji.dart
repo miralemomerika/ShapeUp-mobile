@@ -37,10 +37,6 @@ class _TreningDetaljiState extends State<TreningDetalji> {
               TextButton(
                 onPressed: () => { _launchURL(widget.trening.videoUrl) },
                 child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blueGrey, width: 3),
-                    borderRadius: BorderRadius.all(Radius.circular(20))
-                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

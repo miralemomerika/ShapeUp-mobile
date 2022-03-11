@@ -129,6 +129,7 @@ class _LoginState extends State<Login> {
     if(response['token'] != null){
       HttpService.token = response['token'];
       HttpService.role = response['role'];
+      HttpService.name = response['firstname'];
     }
   }
 

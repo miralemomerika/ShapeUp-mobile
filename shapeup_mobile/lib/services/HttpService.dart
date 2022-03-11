@@ -5,14 +5,16 @@ import 'dart:io';
 class HttpService {
   static String token = "";
   static String role = "";
+  static String name = "";
   String route = "";
 
   HttpService({this.route = ""});
 
-  void setVars(String _token, String _role) 
+  void setVars(String _token, String _role, String _name) 
   {
     token = _token;
     role = _role;
+    name = _name;
   }
 
   static Future<List<dynamic>?> Get(String route, dynamic object, {List<String>? includeList = null}) async
