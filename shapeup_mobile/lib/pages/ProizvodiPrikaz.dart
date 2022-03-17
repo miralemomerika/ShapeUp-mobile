@@ -88,7 +88,9 @@ class _ProizvodiPrikaz extends State<ProizvodiPrikaz> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image(image: MemoryImage(proizvod.slika), width: 100, height: 100,),
+              Container(
+                child: imageShow(proizvod)
+              ),
               Flexible( 
                 child: Container(
                   height: 100,
@@ -115,5 +117,12 @@ class _ProizvodiPrikaz extends State<ProizvodiPrikaz> {
         ),
       ),
     );
+  }
+
+  Widget imageShow (proizvod) {
+    if(proizvod.slika != null && proizvod.slika!.isNotEmpty){
+      return Image(image: MemoryImage(proizvod.slika!), width: 100, height: 100,);
+    }
+    return Image(image: AssetImage('assets/no-image.png'), width: 100, height: 100,);
   }
 }
