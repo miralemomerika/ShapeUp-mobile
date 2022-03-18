@@ -109,8 +109,31 @@ class _DashboardState extends State<Dashboard> {
   }
 
   Widget planWidget(){
-    if(plan != null) {
-      return 
+    return FutureBuilder<dynamic>(
+      future: GetPlan(),
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+        if(snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator(),);
+        }
+        else {
+          if(snapshot.hasError) {
+            return Center(child: Text('${snapshot.error}'),);
+          }
+          else if(snapshot.data == null) {
+            return Center(child: Text('Nema plana za danas.'),);
+          }
+          else {
+            return Container(
+              child: planCards(snapshot.data),
+            );
+          }
+        }
+      }
+    );
+  }
+
+  Widget planCards(plan) {
+    return 
       Column (
         children: [
           Container(
@@ -155,13 +178,9 @@ class _DashboardState extends State<Dashboard> {
             ),
         ],
       );
-    }
-    else {
-      return CircularProgressIndicator();
-    }
   }
 
-  void GetPlan () async {
+  Future<dynamic> GetPlan () async {
     var plans = await HttpService.Get('Plan', null);
 
     var list = plans!.map((e) => Plan.fromJson(e)).toList();
@@ -181,8 +200,10 @@ class _DashboardState extends State<Dashboard> {
     for(var item in list)
     {
       if(item.datum == dateTimeNow){
-        setState(() {plan = item; });
+        return item;
       }
     }
+
+    return null;
   }
 }
