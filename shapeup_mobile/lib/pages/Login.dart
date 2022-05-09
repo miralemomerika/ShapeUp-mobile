@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shapeup_mobile/models/LoginResponse.dart';
 import 'package:shapeup_mobile/models/LoginDto.dart';
-import 'package:shapeup_mobile/services/HttpService.dart';  
+import 'package:shapeup_mobile/services/HttpService.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
