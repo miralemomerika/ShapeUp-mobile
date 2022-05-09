@@ -129,7 +129,7 @@ class HttpService {
         headers: <String, String>{
           'Content-Type': 'application/json; charset=utf-8'
         },
-        body: body,
+        body: jsonEncode(body),
       );
     }
 

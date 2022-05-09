@@ -17,7 +17,7 @@ class _ProizvodiPrikaz extends State<ProizvodiPrikaz> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('Proizvodi'),
+        title: Text('Suplementi'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

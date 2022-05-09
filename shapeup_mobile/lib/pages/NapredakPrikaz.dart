@@ -112,7 +112,7 @@ class _NapredakPrikaz extends State<NapredakPrikaz> {
     if(response == null) return;
     if(response == "500") return;
     
-    if(response['token'] != null){
+    if(response != null || response == '200'){
       return true;
     }
   }
