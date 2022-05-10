@@ -52,7 +52,7 @@ class _PaymentFormState extends State<PaymentForm> {
                       hintText: 'Kartica'),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 TextField(
                   controller: expYearController,
@@ -62,7 +62,7 @@ class _PaymentFormState extends State<PaymentForm> {
                     hintText: 'Godina isteka'),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 TextField(
                   controller: expMonthController,
@@ -72,7 +72,7 @@ class _PaymentFormState extends State<PaymentForm> {
                     hintText: 'Mjesec isteka'),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 TextField(
                   controller: cvcController,
@@ -82,7 +82,7 @@ class _PaymentFormState extends State<PaymentForm> {
                     hintText: 'CVC'),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 TextField(
                   controller: nameController,
@@ -92,7 +92,7 @@ class _PaymentFormState extends State<PaymentForm> {
                     hintText: 'Ime'),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 TextField(
                   controller: addressController,
@@ -102,7 +102,7 @@ class _PaymentFormState extends State<PaymentForm> {
                     hintText: 'Adresa'),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 TextField(
                   controller: issuingCardController,
@@ -112,7 +112,7 @@ class _PaymentFormState extends State<PaymentForm> {
                     hintText: 'Izdavac kartice'),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 TextField(
                   enabled: false,
@@ -123,7 +123,7 @@ class _PaymentFormState extends State<PaymentForm> {
                     hintText: 'Cijena'),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Container(
                   height: 60,

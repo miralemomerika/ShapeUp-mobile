@@ -53,15 +53,15 @@ class _Profil extends State<Profil> {
 
   Widget usersProfile (user) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.all(5),
       child: Column(
         children: [ 
           SizedBox(
-            height: 200,
+            height: 150,
             child: Container(
               alignment: Alignment.center,
               child: ClipOval(
-                child: imageShow(user),
+                child: imageShow(user)
               ),
             ),
           ),
@@ -70,50 +70,54 @@ class _Profil extends State<Profil> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  alignment: Alignment.topLeft,
+                  alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
+                        _prefixIcon(Icons.people),
                         Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
+
                           alignment: Alignment.centerLeft,
-                          child: Text("Ime", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
+                          child: Text("Ime", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,)),
                         ),
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                           alignment: Alignment.centerLeft,
-                          child: Text(user.firstName, style: TextStyle(fontSize: 20,),),
+                          child: Text(user.firstName, style: TextStyle(fontSize: 18)),
                         ),
+
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
                           alignment: Alignment.centerLeft,
-                          child: Text("Prezime", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
+                          child: Text("Prezime", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                         ),
                         Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+
                           alignment: Alignment.centerLeft,
-                          child: Text(user.lastName, style: TextStyle(fontSize: 20,),),
+                          child: Text(user.lastName, style: TextStyle(fontSize: 18,),),
+                        ),
+                        _prefixIcon(Icons.phone),
+                        Container(
+
+                          alignment: Alignment.centerLeft,
+                          child: Text("Mobitel", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                         ),
                         Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          margin: EdgeInsets.fromLTRB(0, 5, 0, 0 ),
                           alignment: Alignment.centerLeft,
-                          child: Text("Mobitel", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
+                          child: Text(user.phoneNumber, style: TextStyle(fontSize: 20,)),
                         ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                          alignment: Alignment.centerLeft,
-                          child: Text(user.phoneNumber, style: TextStyle(fontSize: 20,),),
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
-                          alignment: Alignment.centerLeft,
-                          child: Text("Email", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
-                        ),
+                        _prefixIcon(Icons.email),
                         Container(
                           alignment: Alignment.centerLeft,
-                          child: Text(user.email, style: TextStyle(fontSize: 20,),),
+                          child: Text("Email", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                        ),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 5, 0, 0 ),
+                          alignment: Alignment.centerLeft,
+                          child: Text(user.email, style: TextStyle(fontSize: 20,)),
                         ),
                       ],
                     ),
@@ -124,6 +128,21 @@ class _Profil extends State<Profil> {
           )
         ],
       )
+    );
+  }
+  _prefixIcon(IconData iconData) {
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minWidth: 48.0, minHeight: 48.0),
+      child: Container(
+          alignment: Alignment.centerLeft,
+          padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+          margin: const EdgeInsets.only(right: 8.0),
+
+          child: Icon(
+            iconData,
+            size: 30,
+            color: Colors.lightBlue,
+          )),
     );
   }
 

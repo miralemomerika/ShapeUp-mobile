@@ -40,15 +40,19 @@ class _TreningDetaljiState extends State<TreningDetalji> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Pokreni video'),
-                      Icon(Icons.play_arrow),
+                      Text(('Pokreni video'),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold ,color: Colors.lightBlue)),
+                      Icon((Icons.play_arrow),color:Colors.lightBlue),
                     ],
                   ),
                 ),
                 
               ),
-              Text(widget.trening.opis),
-          ],
+              Container(
+                margin: EdgeInsets.fromLTRB(20, 40, 0, 0),
+                alignment: Alignment.centerLeft,
+                child:Text((widget.trening.opis),style: TextStyle(fontSize: 20,color: Colors.lightBlue)),
+              ),
+            ],
         ),
       ),
     );

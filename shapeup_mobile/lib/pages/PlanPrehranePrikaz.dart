@@ -25,7 +25,7 @@ class _PlanPrehranePrikaz extends State<PlanPrehranePrikaz> {
             alignment: Alignment.topLeft,
             child: Padding(
                 padding: EdgeInsets.all(20),
-                child: Text('Vasi Obroci', style: TextStyle(color: Colors.blueGrey[900], fontSize: 25, fontFamily: 'Arial'),
+                child: Text('Vaši Obroci', style: TextStyle(color: Colors.blueGrey[900], fontSize: 25, fontFamily: 'Arial'),
               )
             ),
           ),
@@ -64,7 +64,7 @@ class _PlanPrehranePrikaz extends State<PlanPrehranePrikaz> {
   Widget obrokCard (obrok) {
     return Card(
       elevation: 5,
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.all(15),
       child: TextButton(
         onPressed: () {
           Navigator.push(
@@ -73,8 +73,9 @@ class _PlanPrehranePrikaz extends State<PlanPrehranePrikaz> {
                   builder: (context) =>
                       PlanPrehranDetalji(planPrehrane: obrok))).then((_) => { setState(() { })});
         },
-        child: Padding(padding: EdgeInsets.all(20),
-          child: Text(obrok.opis),
+
+        child: Padding(padding: EdgeInsets.all(30),
+          child: Text((obrok.opis),style: TextStyle(fontSize: 15,color: Colors.lightBlue,fontWeight: FontWeight.normal),textAlign: TextAlign.left),
         ),
       ),
     );

@@ -35,7 +35,7 @@ class _NapredakPrikaz extends State<NapredakPrikaz> {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 200,
+                    width: 220,
                     child: Column(
                       children: [
                         Container(
@@ -49,8 +49,8 @@ class _NapredakPrikaz extends State<NapredakPrikaz> {
                             controller: weightController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20)),
-                                hintText: 'Tjelesna tezina'),
+                                borderRadius: BorderRadius.circular(10)),hoverColor: Colors.lightBlue,
+                                hintText: 'Tjelesna težina'),
                           ),
                         ),
                         Container(
@@ -78,8 +78,8 @@ class _NapredakPrikaz extends State<NapredakPrikaz> {
                   Container(
                     width: 100,
                     decoration: BoxDecoration(
-                      color: Colors.blue[200], 
-                      borderRadius: BorderRadius.circular(20)
+                      color: Colors.blue[400],
+                      borderRadius: BorderRadius.circular(10)
                       ),
                     child: TextButton(
                       child: Text("Spasi", style: TextStyle(color: Colors.white),), 

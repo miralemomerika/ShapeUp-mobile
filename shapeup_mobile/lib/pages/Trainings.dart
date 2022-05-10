@@ -25,7 +25,7 @@ class _TrainingsState extends State<Trainings> {
             alignment: Alignment.topLeft,
             child: Padding(
                 padding: EdgeInsets.all(20),
-                child: Text('Vasi Treninzi', style: TextStyle(color: Colors.blueGrey[900], fontSize: 25, fontFamily: 'Arial'),
+                child: Text('Vaši Treninzi', style: TextStyle(color: Colors.blueGrey[900], fontSize: 25, fontFamily: 'Arial'),
               )
             ),
           ),
@@ -74,7 +74,7 @@ class _TrainingsState extends State<Trainings> {
                       TreningDetalji(trening: trening))).then((_) => { setState(() { })});
         },
         child: Padding(padding: EdgeInsets.all(20),
-          child: Text(trening.opis),
+          child: Text((trening.opis),style: TextStyle(fontSize: 15,color: Colors.lightBlue,fontWeight: FontWeight.normal)),
         ),
       ),
     );

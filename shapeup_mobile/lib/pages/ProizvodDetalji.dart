@@ -30,15 +30,15 @@ class _ProizvodiDetaljiState extends State<ProizvodiDetalji> {
             Container(
                 decoration: BoxDecoration(
                     border: Border(
-                        bottom: BorderSide(width: 1, color: Colors.grey))),
+                        bottom: BorderSide(width: 1, color: Colors.lightBlueAccent))),
                 child: imageShow()),
             Container(
               margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
               child: Text(
                 widget.proizvod.naziv,
                 style: TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'Arial',
+                  fontSize: 25,
+                  fontFamily: 'Arial',color: Colors.lightBlue
                 ),
               ),
             ),
@@ -50,24 +50,26 @@ class _ProizvodiDetaljiState extends State<ProizvodiDetalji> {
                       margin: EdgeInsets.fromLTRB(30, 0, 0, 10),
                       alignment: Alignment.topLeft,
                       child: Text(
-                        'Kratki opis:',
+                        'Opis:',
                         style: TextStyle(
                             fontSize: 20,
                             fontFamily: 'Arial',
                             fontWeight: FontWeight.bold),
                       )),
-                  Text(
-                    widget.proizvod.opis,
+                  Container(
+                    margin: EdgeInsets.fromLTRB(30, 0, 0, 10),
+                    child:Text(widget.proizvod.opis,
                     style: TextStyle(
                       fontSize: 16,
                       fontFamily: 'Arial',
                     ),
                   ),
+                  ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(50),
+              padding: EdgeInsets.all(10),
               child: TextButton(
                 onPressed: () {
                   Navigator.push(
@@ -80,7 +82,7 @@ class _ProizvodiDetaljiState extends State<ProizvodiDetalji> {
                 child: Image(
                   width: 100,
                   height: 100,
-                  image: AssetImage('assets/korpa.png'),
+                  image: AssetImage('assets/blue-shopping-cart-icon.png'),
                 ),
               ),
             ),

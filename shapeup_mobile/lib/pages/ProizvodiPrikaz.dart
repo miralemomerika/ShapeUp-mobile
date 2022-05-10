@@ -27,7 +27,7 @@ class _ProizvodiPrikaz extends State<ProizvodiPrikaz> {
               padding: EdgeInsets.all(20), 
               child: Text('Proizvodi by Proteini.si',
                 style: TextStyle(
-                  color: Colors.blueGrey[900], 
+                  color: Colors.blueGrey[900],
                   fontSize: 25, 
                   fontFamily: 'Arial',
                 ),
@@ -101,7 +101,7 @@ class _ProizvodiPrikaz extends State<ProizvodiPrikaz> {
                       Container(
                         height: 40,
                         alignment: Alignment.topCenter,
-                        child: Text(proizvod.naziv, style: TextStyle(color: Colors.blueGrey[900], fontSize: 18, fontWeight: FontWeight.bold),),
+                        child: Text(proizvod.naziv, style: TextStyle(color: Colors.lightBlueAccent, fontSize: 18, fontWeight: FontWeight.bold),),
                       ),
                       Container(
                         height: 40,

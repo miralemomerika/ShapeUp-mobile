@@ -46,11 +46,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Container(
-                  height: 150,
-                  child: Text(
-                    'Fitness First',
-                    style: TextStyle(fontSize: 55, color: Colors.black, fontFamily: 'Arial'),
-                  ),
+                  height: 50,
                 ),
                 TextField(
                   controller: emailController,

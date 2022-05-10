@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shapeup_mobile/models/PlanPrehrane.dart';
 
@@ -32,7 +33,7 @@ class _PlanPrehranDetaljiState extends State<PlanPrehranDetalji> {
               child: imageShow()
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
+              margin: EdgeInsets.fromLTRB(0, 40, 0, 20),
               child: Column(
                 children: [
                   Container(
@@ -41,19 +42,19 @@ class _PlanPrehranDetaljiState extends State<PlanPrehranDetalji> {
                     child: Text('Obroci:', textAlign: TextAlign.left,
                      style: TextStyle(fontSize: 20, 
                       fontFamily: 'Arial', 
-                      fontWeight: FontWeight.bold),
+                      color: Colors.lightBlue),
                     )
                   ),
-                  Text(widget.planPrehrane.opis, 
-                    style: TextStyle(fontSize: 16, 
-                      fontFamily: 'Arial',
+                  Text(widget.planPrehrane.opis,textAlign: TextAlign.left,
+                    style: TextStyle(fontSize: 16,
+                      fontFamily: 'Arial',fontWeight: FontWeight.normal
                     ),
                   ),
                 ],
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
+              margin: EdgeInsets.fromLTRB(0, 25, 110, 20),
               child: Column(
                 children: [
                   Container(
@@ -62,11 +63,12 @@ class _PlanPrehranDetaljiState extends State<PlanPrehranDetalji> {
                     child: Text('Nutritivne vrijednosti obroka:',
                      style: TextStyle(fontSize: 20, 
                       fontFamily: 'Arial', 
-                      fontWeight: FontWeight.bold),
+                      color: Colors.lightBlue),
                     )
                   ),
-                  Text(widget.planPrehrane.nutritivneVrijednosti, 
-                    style: TextStyle(fontSize: 16, 
+
+                  Text(widget.planPrehrane.nutritivneVrijednosti,
+                    style: TextStyle(fontSize: 16,
                       fontFamily: 'Arial',
                     ),
                   ),
